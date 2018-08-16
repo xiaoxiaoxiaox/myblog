@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'apps/style.css' %}">
+
+{% if last %}
+    <ul>
+    {% for question in last  %}
+        <li><a href="{% url 'apps:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
